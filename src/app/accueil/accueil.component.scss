@@ -1,0 +1,84 @@
+.categorie {
+  display: flex;
+  margin: 5px;
+
+  .en-tete {
+    width: 100px;
+    height: 100px;
+    background-color: violet;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      font-weight: bold;
+    }
+  }
+
+  .contenu {
+    background-color: lightgray;
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+
+    .image {
+      position: relative;
+      width: 100px;
+      height: 100px;
+
+      img {
+        width: inherit;
+        height: inherit;
+        object-fit: cover;
+        background-color: black;
+      }
+
+      &:hover .btn {
+        display: block;
+      }
+
+      .btn {
+        position: absolute;
+        display: none;
+
+        &.plus {
+          top: 5px;
+          right: 5px;
+        }
+        &.moins {
+          bottom: 5px;
+          right: 5px;
+        }
+        &.supprime {
+          top: 5px;
+          left: 5px;
+          background-color: red;
+        }
+
+        &:hover {
+          background-color: white;
+        }
+      }
+    }
+  }
+
+  &:nth-child(1) .en-tete {
+    background-color: red;
+  }
+
+  &:nth-child(2) .en-tete {
+    background-color: rgb(255, 170, 0);
+  }
+
+  &:nth-child(3) .en-tete {
+    background-color: rgb(140, 255, 0);
+  }
+
+  &:nth-child(4) .en-tete {
+    background-color: rgb(0, 225, 255);
+  }
+
+  &:nth-child(5) .en-tete {
+    background-color: rgb(0, 34, 255);
+  }
+}

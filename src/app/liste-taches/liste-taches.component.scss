@@ -1,0 +1,95 @@
+.page-liste-taches {
+  padding: 20px;
+  margin: 0 auto;
+}
+
+div.formulaire {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.edit-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #28a745;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.liste-taches {
+  margin-top: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tache {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  width: 100%;
+}
+
+.contenu {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.contenu input[type="checkbox"] {
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.contenu span {
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.accompli {
+  text-decoration: line-through;
+  color: #6c757d;
+}
+
+.btn.edit {
+  background-color: blue;
+}
+
+.btn.supprime {
+  background-color: red;
+}
+
+.btn.save {
+  background-color: green;
+}
+
+.btn.cancel {
+  background-color: orange;
+}

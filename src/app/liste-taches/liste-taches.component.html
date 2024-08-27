@@ -1,0 +1,35 @@
+<div class="formulaire">
+  <input [(ngModel)]="nouvelleTache" placeholder="Ajouter une nouvelle tâche" />
+  <div class="btn" (click)="ajouterTache()">Ajouter une tâche</div>
+</div>
+
+<div>
+  <div class="btn" (click)="reset()">Réinitialiser la liste</div>
+</div>
+
+<div class="liste-taches">
+  @for (tache of taches; track $index; let indexTache = $index) {
+    <div class="tache">
+      <div class="contenu">
+        <input
+          type="checkbox"
+          [checked]="tache.accompli"
+          (change)="basculerAccomplissementTache(tache.id)"
+        />
+
+        @if (!tache.enEdition) {
+          <span [ngClass]="{ accompli: tache.accompli }">{{ tache.nom }}</span>
+          <div class="btn edit" (click)="activerEdition(tache)">Éditer</div>
+        }
+
+        @if (tache.enEdition) {
+          <input [(ngModel)]="tache.nom" class="edit-input" />
+          <div class="btn save" (click)="sauvegarderEdition(tache)">Sauvegarder</div>
+          <div class="btn cancel" (click)="annulerEdition(tache)">Annuler</div>
+        }
+
+        <div class="btn supprime" (click)="supprimerTache(tache.id)">Supprimer</div>
+      </div>
+    </div>
+  }
+</div>

@@ -1,0 +1,64 @@
+<div>
+  <input [(ngModel)]="urlImage" />
+  <div class="btn" (click)="onClicAjouterImage()">Ajouter une image</div>
+</div>
+
+<div>
+  <input [(ngModel)]="nomCategorie" />
+  <div class="btn" (click)="onClicAjouterCategorie()">
+    Ajouter une catégorie
+  </div>
+</div>
+
+<div>
+  <div class="btn" (click)="reset()">Réinitialiser</div>
+</div>
+
+<div class="liste-categories">
+  @for (categorie of categories; track $index; let indexCategorie = $index) {
+    <div class="categorie">
+      <div class="en-tete">
+        <p>{{ categorie.nom }}</p>
+      </div>
+      <div class="contenu">
+        @for (
+          urlImage of categorie.images;
+          track $index;
+          let indexImage = $index
+        ) {
+          <div class="image">
+            <img src="{{ urlImage }}" />
+
+            @if (indexCategorie != 0) {
+              <div
+                class="btn plus"
+                (click)="
+                  onClicChangementCategorie(indexCategorie, indexImage, false)
+                "
+              >
+                +
+              </div>
+            }
+            @if (indexCategorie < categories.length - 1) {
+              <div
+                class="btn moins"
+                (click)="
+                  onClicChangementCategorie(indexCategorie, indexImage, true)
+                "
+              >
+                -
+              </div>
+            }
+
+            <div
+              class="btn supprime"
+              (click)="onClicSupprime(indexCategorie, indexImage)"
+            >
+              X
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  }
+</div>

@@ -1,0 +1,40 @@
+.page-recapitulatif {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.recap-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.recap-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.recap-label {
+  font-weight: bold;
+  color: #555;
+}
+
+.recap-value {
+  font-size: 18px;
+  color: #007bff;
+}
